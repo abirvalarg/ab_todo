@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			{% if title %}
+				{{ title }}
+			{% else %}
+				abirvalarg's ToDo
+			{% endif %}
+		</title>
+		{% if pageScript or useVue %}
+			<script src="https://unpkg.com/petite-vue" defer></script>
+			{% if pageScript %}
+				<script src="{{ pageScript }}" defer></script>
+			{% endif %}
+		{% endif %}
+	</head>
+	<body>
+		<h1>abirvalarg's ToDo</h1>
+		<hr>
+		{% block main %}{% endblock %}
+	</body>
+</html>
